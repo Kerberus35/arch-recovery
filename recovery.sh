@@ -7,6 +7,7 @@ mount -o noatime,nodiratime,compress=lzo,space_cache=v2,ssd,subvol=@var_log /dev
 mount -o noatime,nodiratime,compress=lzo,space_cache=v2,ssd,subvol=@snapshots /dev/mapper/luks /mnt/.snapshots
 mount -o noatime,nodiratime,compress=lzo,space_cache=v2,ssd,subvolid=5 /dev/mapper/luks /mnt/btrfs
 mount /dev/nvme0n1p1 /mnt/boot
+apt install arch-install-scripts
 arch-chroot /mnt/
 pacman -Syyu linux linux-headers
 mkinitcpio -P
